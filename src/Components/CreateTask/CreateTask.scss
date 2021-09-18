@@ -1,0 +1,84 @@
+.create_task{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #00000099;
+    z-index: 99;
+    transition: .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+
+    .create_task_wrapper{
+        transition: .4s;
+        margin-top: 20px;
+        max-width: 500px;
+        width: 100%;
+        min-height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+
+        .cancel{
+            margin-bottom: 10px;
+
+            svg{
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .MuiFormControl-root{
+                margin: 10px 0;
+            }
+
+            .MuiInputLabel-outlined {
+                z-index: 1;
+                transform: translate(14px, 14px) scale(1);
+            }
+
+            .MuiInputLabel-shrink {
+                z-index: 1;
+                transform: translate(14px, -10px) scale(.75);
+                pointer-events: none;
+                background: rgb(174, 175, 179);
+                border-radius: 50px;
+            }
+
+            .MuiOutlinedInput-input {
+                padding: 12.5px 14px;
+            }
+
+            .MuiOutlinedInput-multiline {
+                padding: 0;
+            }
+
+            button{
+                color: white;
+                background: #4970ff;
+            }
+        }
+
+    }
+
+}
+
+.create_task.active{
+    opacity: 1;
+    visibility: visible;
+
+    .create_task_wrapper{
+        margin-top: 0;
+    }
+}
